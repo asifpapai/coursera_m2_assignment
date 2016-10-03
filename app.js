@@ -17,7 +17,6 @@ function ShoppingListController1(ShoppingListService) {
   };
 }
 
-
 // LIST #2 - controller
 ShoppingListController2.$inject = ['ShoppingListService'];
 function ShoppingListController2(ShoppingListService) {
@@ -25,7 +24,6 @@ function ShoppingListController2(ShoppingListService) {
 
   list2.items = ShoppingListService.sendItems();
 }
-
 
 function ShoppingListService() {
   var service = this;
@@ -48,15 +46,15 @@ function ShoppingListService() {
       quantity: "5"
     },
     {
-      name: "Glusil",
+      name: "Gelusil",
       quantity: "5"
     }
   ];
 
   var boughtItems =[];
   service.removeItem = function (itemIdex) {
-    buyItems.splice(itemIdex, 1);
     boughtItems.push(buyItems[itemIdex]);
+    buyItems.splice(itemIdex, 1);  
   };
 
   service.getItems = function () {
